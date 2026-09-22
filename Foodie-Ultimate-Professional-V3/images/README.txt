@@ -1,0 +1,1 @@
+Remote demo food images are used. Add local images here if required.

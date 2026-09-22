@@ -1,0 +1,32 @@
+.glass{background:rgba(255,255,255,.85);backdrop-filter:blur(12px)}
+/* ===== Foodie V2 Showcase UI ===== */
+.alt{background:linear-gradient(180deg,#fafafa,#fff)}
+.moodGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.mood{border:1px solid #e8e8e8;background:#fff;border-radius:18px;padding:20px 12px;text-align:center;cursor:pointer;transition:.2s;box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.mood:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(0,0,0,.08)}
+.mood:first-letter{font-size:28px}.mood b,.mood small{display:block;margin-top:6px}.mood small{color:#777}
+.smartResult{margin-top:22px}.smartResultHead{display:flex;justify-content:space-between;margin-bottom:14px}.smartResultHead span{color:#777}
+.smartFoodGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.smartFood{display:flex;gap:12px;background:#fff;border:1px solid #eee;border-radius:16px;padding:10px;overflow:hidden}
+.smartFoodImg{width:110px;min-width:110px;height:100px;background-size:cover;background-position:center;border-radius:12px;position:relative}
+.smartFoodImg .pill{position:absolute;left:7px;bottom:7px}
+.smartFoodBody{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:4px 2px}.smartFoodBody small{color:#777}.miniBtn{padding:7px 11px;font-size:12px;margin-top:auto}
+.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef8f1;color:#18733b;font-size:11px;font-weight:800}
+.surprise{display:flex;gap:20px;align-items:center;padding:25px;border-radius:22px;background:linear-gradient(135deg,#fff3e7,#fff);border:1px solid #ffd8b5}.surpriseEmoji{font-size:58px}.surprise h2{margin:5px 0}
+.featureHero{display:grid;grid-template-columns:1.5fr .7fr;gap:25px;align-items:stretch}.comboControls{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.comboResult{margin:12px 0 18px;padding:14px 16px;border:1px dashed #ddd;border-radius:14px}.comboResult>div{display:flex;align-items:center;gap:16px}.comboResult span{color:#777}.comboResult strong{font-size:22px}.comboResult small{color:#18864b;font-weight:800}
+.labCard{border-radius:25px;padding:30px;background:linear-gradient(145deg,#fff,#f6f6f6);border:1px solid #eee;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.labIcon{font-size:70px;margin-bottom:12px}
+.featureCards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.bigFeature{min-height:240px}.groupBox{margin-top:15px;padding:12px;border-radius:12px;background:#f7f7f7;display:grid;gap:7px}.groupBox small{color:#777}.rewardBar{margin:18px 0}.rewardBar>div{height:9px;background:#eee;border-radius:9px;overflow:hidden;margin-top:8px}.rewardBar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff7a18,#ffb347);border-radius:9px;transition:width .4s}
+.voiceBtn{padding:10px 14px}.suggestions{position:relative;z-index:5}.suggestion{display:block;width:100%;text-align:left;padding:10px 14px;background:#fff;border:1px solid #eee;border-top:0;cursor:pointer}
+.checkoutExtras{margin:18px 0;padding:16px;border:1px solid #eee;border-radius:16px;background:#fafafa}.toggleRow{display:flex;gap:9px;align-items:center;padding:12px 0}.toggleRow span{margin-left:auto;color:#18864b;font-size:12px;font-weight:800}
+body.dark{background:#111;color:#eee}body.dark .nav,body.dark .panel,body.dark .feature,body.dark .mood,body.dark .smartFood,body.dark .labCard,body.dark .checkoutExtras,body.dark .suggestion{background:#191919;color:#eee;border-color:#333}body.dark .muted,body.dark .smartFoodBody small,.dark .mood small{color:#aaa}body.dark .alt{background:#151515}body.dark .input,body.dark .textarea{background:#111;color:#eee;border-color:#444}
+@media(max-width:1000px){.moodGrid{grid-template-columns:repeat(3,1fr)}.smartFoodGrid{grid-template-columns:repeat(2,1fr)}.featureCards{grid-template-columns:1fr}.featureHero{grid-template-columns:1fr}}
+@media(max-width:650px){.moodGrid{grid-template-columns:repeat(2,1fr)}.smartFoodGrid{grid-template-columns:1fr}.comboControls{grid-template-columns:1fr}.smartFood{min-height:115px}}
+
+.stateHero{padding:70px 0;background:radial-gradient(circle at 80% 20%,#fff0d9,transparent 40%),linear-gradient(135deg,#fff,#f7f7f7)}
+.stateHero h1{font-size:clamp(38px,6vw,70px);margin:12px 0}.stateHero p{max-width:720px;font-size:18px;color:#666}.stateSearch{display:flex;gap:15px;align-items:center;max-width:650px;margin-top:25px}.stateSearch span{white-space:nowrap;color:#777;font-size:13px}
+.stateLayout{display:grid;grid-template-columns:260px 1fr;gap:28px}.stateList{display:flex;flex-direction:column;gap:7px;max-height:700px;overflow:auto;position:sticky;top:20px;height:max-content}.stateList button{display:flex;justify-content:space-between;align-items:center;border:1px solid #eee;background:#fff;padding:11px 13px;border-radius:12px;text-align:left;cursor:pointer}.stateList button:hover,.stateList .selected{border-color:#ff7a18;background:#fff6ee}.stateList span{font-size:11px;color:#999}
+.stateFoodGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.stateFood{border:1px solid #eee;border-radius:17px;background:#fff;overflow:hidden;transition:.2s}.stateFood:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.08)}.stateImg{height:145px;background-size:cover;background-position:center;position:relative}.stateImg .pill{position:absolute;left:9px;top:9px;background:#fff}.stateBody{padding:13px}.stateBody small{display:block;color:#777;margin-top:5px}.stateBottom{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.indiaBanner{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:30px;border-radius:25px;background:linear-gradient(120deg,#fff3e6,#fff);border:1px solid #ffd9bb}.indiaBanner h2{margin:7px 0}
+@media(max-width:1000px){.stateLayout{grid-template-columns:1fr}.stateList{position:static;display:grid;grid-template-columns:repeat(2,1fr);max-height:300px}.stateFoodGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.stateFoodGrid{grid-template-columns:1fr}.stateSearch,.indiaBanner{flex-direction:column;align-items:flex-start}.stateList{grid-template-columns:1fr}}

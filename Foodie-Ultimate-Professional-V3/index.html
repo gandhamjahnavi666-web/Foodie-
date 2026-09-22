@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foodie | Smart Food Delivery</title>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<nav class="nav"><div class="container navin">
+<a class="logo" href="index.html"><span class="mark">F</span>Foodie</a>
+<div class="links"><a href="index.html">Home</a><a href="restaurants.html">Restaurants</a><a href="offers.html">Offers</a><a href="orders.html">Orders</a><a href="order-tracking.html">Live Track</a><a href="profile.html">Profile</a></div>
+<div class="navright"><button class="btn light" onclick="toggleTheme()">◐</button><a class="btn light" href="login.html">Login</a><a class="btn light" href="cart.html">🛒 <span class="cartcount">0</span></a></div>
+</div></nav>
+
+<header class="hero"><div class="container heroGrid">
+<div><div class="eyebrow">SMART • PERSONAL • DELICIOUS</div>
+<h1>Food delivery,<br><span>your way.</span></h1>
+<p class="lead">Discover food by mood, build your own combo, order together, earn rewards and follow your delivery in real time-style simulation.</p>
+<form class="search" onsubmit="event.preventDefault();location.href='restaurants.html?search='+encodeURIComponent(this.q.value)">
+<input name="q" id="mainSearch" autocomplete="off" placeholder="Search biryani, pizza, burgers or restaurants">
+<button type="button" class="btn light voiceBtn" onclick="startVoice()">🎤</button><button class="btn primary">Search</button>
+</form>
+<div id="searchSuggest" class="suggestions"></div>
+<div class="stats"><div><strong>50+</strong><small> dishes</small></div><div><strong>9</strong><small> partner restaurants</small></div><div><strong>4.8★</strong><small> best rating</small></div></div>
+</div>
+<div class="heroPhoto" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1100&q=85')">
+<div class="floating f1">⚡ <b>24 min</b><br><small>smart ETA</small></div><div class="floating f2">🎁 <b>₹50 OFF</b><br><small>orders above ₹500</small></div>
+</div></div></header>
+
+<section class="section"><div class="container">
+<div class="head"><div><h2>What's your mood today?</h2><p class="muted">Foodie matches your mood with dishes and restaurants.</p></div></div>
+<div class="moodGrid">
+<button class="mood" onclick="mood('Hungry')">😋<b>Hungry</b><small>Big & filling</small></button>
+<button class="mood" onclick="mood('Spicy')">🌶️<b>Spicy</b><small>Bring the heat</small></button>
+<button class="mood" onclick="mood('Healthy')">🥗<b>Healthy</b><small>Fresh & light</small></button>
+<button class="mood" onclick="mood('Sweet')">🍰<b>Sweet</b><small>Dessert time</small></button>
+<button class="mood" onclick="mood('Quick')">⚡<b>Quick Bite</b><small>Under 25 min</small></button>
+<button class="mood" onclick="mood('Chill')">☕<b>Chill</b><small>Snacks & drinks</small></button>
+</div>
+<div id="moodResult" class="smartResult"></div>
+</div></section>
+
+<section class="section alt"><div class="container">
+<div class="head"><div><h2>✨ Smart picks for you</h2><p class="muted">Personalised using your activity and order history.</p></div><button class="btn primary" onclick="surpriseMe()">🎲 Surprise Me</button></div>
+<div id="recommendations" class="grid"></div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="featureHero">
+<div><span class="eyebrow">FOODIE LAB</span><h2>Build your perfect meal 🍱</h2><p class="muted">Choose a main, side and drink. Foodie calculates your custom combo and savings.</p>
+<div class="comboControls">
+<select id="comboMain" class="input"></select><select id="comboSide" class="input"></select><select id="comboDrink" class="input"></select>
+</div><div id="comboResult" class="comboResult"></div>
+<button class="btn primary" onclick="addCombo()">Add custom combo to cart</button>
+</div>
+<div class="labCard"><div class="labIcon">🍱</div><b>Custom Combo Engine</b><p class="muted">Mix & match your cravings with a demo combo discount.</p><span class="pill">Save up to ₹80</span></div>
+</div>
+</div></section>
+
+<section class="section alt"><div class="container">
+<div class="featureCards">
+<div class="feature bigFeature"><div class="icon">👥</div><h3>Order Together</h3><p>Create a group room and share a simple code with friends. Everyone can choose their food before one combined checkout.</p><button class="btn light" onclick="createGroup()">Create group room</button><div id="groupResult"></div></div>
+<div class="feature bigFeature"><div class="icon">🏆</div><h3>Foodie Rewards</h3><p>Earn points from orders, reviews and referrals. Use your points for demo discounts.</p><div class="rewardBar"><span id="pointsValue">0 pts</span><div><i id="pointsFill"></i></div></div><button class="btn light" onclick="claimDaily()">Claim daily bonus</button></div>
+<div class="feature bigFeature"><div class="icon">🌱</div><h3>Eco Delivery</h3><p>Choose an eco-friendly delivery option at checkout and earn extra reward points.</p><span class="pill">+15 points</span></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="head"><div><h2>What are you craving?</h2><p class="muted">Explore by category.</p></div></div><div id="cats" class="categories"></div>
+</div></section>
+
+<section class="section"><div class="container"><div class="indiaBanner"><div><span class="eyebrow">🇮🇳 NEW • FOOD CULTURE</span><h2>Explore 1,400+ dishes across India</h2><p class="muted">28 states × 50 regional favourites. Discover the food people travel for.</p></div><a class="btn primary" href="state-foods.html">Explore India →</a></div></div></section>
+<section class="section" style="padding-top:0"><div class="container"><div class="deal"><div><h2>🔥 Flash Feast is live</h2><p>Limited-time deals designed to make your next order irresistible.</p></div><a class="btn light" href="offers.html">Unlock offers</a></div></div></section>
+
+<section class="section"><div class="container"><div class="head"><div><h2>Top restaurants</h2><p class="muted">Fast, highly rated and ready for your next craving.</p></div><a class="btn light" href="restaurants.html">See all</a></div><div id="restGrid" class="grid"></div></div></section>
+
+<section class="section alt"><div class="container"><div class="head"><div><h2>Why Foodie feels different</h2><p class="muted">Designed as a showcase frontend project, not just a basic food-ordering UI.</p></div></div>
+<div class="features"><div class="feature"><div class="icon">🧠</div><h3>Smart recommendations</h3><p>Behaviour-based suggestions using browser-side JavaScript.</p></div><div class="feature"><div class="icon">📍</div><h3>Location sharing</h3><p>Browser geolocation demo for delivery point selection.</p></div><div class="feature"><div class="icon">🛵</div><h3>Live-style tracking</h3><p>Animated rider, route, ETA and status timeline.</p></div><div class="feature"><div class="icon">🎤</div><h3>Voice search</h3><p>Uses the browser Speech Recognition API where supported.</p></div></div>
+</div></section>
+
+<footer class="footer"><div class="container"><div class="footgrid">
+<div><div class="logo"><span class="mark">F</span>Foodie</div><p>Smart food delivery frontend with personalised discovery, custom combos, rewards, group ordering and live-style tracking.</p></div>
+<div><b>Explore</b><a href="restaurants.html">Restaurants</a><a href="offers.html">Offers</a><a href="orders.html">Orders</a></div>
+<div><b>Account</b><a href="login.html">Login</a><a href="signup.html">Sign up</a><a href="profile.html">Profile</a></div>
+<div><b>Special</b><a href="order-tracking.html">Live tracking</a><a href="cart.html">Smart cart</a><a href="checkout.html">Eco delivery</a></div>
+</div><div class="copy">© 2026 Foodie • Educational frontend project • Real payment, maps, GPS and multi-user backend are not connected.</div></div></footer>
+<script src="js/script.js"></script>
+</body></html>
